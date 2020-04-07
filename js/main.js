@@ -213,68 +213,70 @@ app.scene.home = {
                 opacity: 0;
                 transition: opacity 150ms ease;
             ">
-                <div class="home--doc-entry-title" style="padding-top: 0;">
-                    <a class="" href="${entry.articleUrl}" style="
-                        font-size: 30px;
-                        font-weight: 600;
-                        color: #000;
-                        display: block;
-                    ">
-                        <span class="home--doc-entry-title--text ff-serif-alt">${entry.title[app.vars.renderLang]}</span>
-                    </a>
-                </div>
-                <div class="home--doc-entry-status" style="padding: 0 0 10px;">
-                    <span class="home--doc-entry-status-date ff-monosapce">${(new Date(entry.dateSubmit)).toISOString().slice(0,10)}&nbsp;</span>
-                    <span class="home--doc-entry-status-authors">${
-                        (entry.authors.length < 3) ?
-                            ( entry.authors.slice(0,2).map(app.subScene.authorLabel.render).join(', ') ) :
-                                ( entry.authors.slice(0,1).concat('etc').map(app.subScene.authorLabel.render).join(', ') )
-                    }</span>
-                </div>
-                <style>
-                .home--doc-entry-cover-img-v2 {
-                    display: block;
-                    width: 100%;
-                    margin: 0 0 10px;
-                }
-                @media screen and (min-width: 768px) {
-                    .home--doc-entry-cover-img-v2-outer {
-                        float: left;
-                        width: 336px; /* text with 385px for 9 lines */
-                        min-height: 202px;
-                        margin: 5px 15px 12px 0;
-                    }
+                <div class="home--doc-entry-big--inner">
+                    <div class="home--doc-entry-title" style="padding-top: 0;">
+                        <a class="" href="${entry.articleUrl}" style="
+                            font-size: 30px;
+                            font-weight: 600;
+                            color: #000;
+                            display: block;
+                        ">
+                            <span class="home--doc-entry-title--text ff-serif-alt">${entry.title[app.vars.renderLang]}</span>
+                        </a>
+                    </div>
+                    <div class="home--doc-entry-status" style="padding: 0 0 10px;">
+                        <span class="home--doc-entry-status-date ff-monosapce">${(new Date(entry.dateSubmit)).toISOString().slice(0,10)}&nbsp;</span>
+                        <span class="home--doc-entry-status-authors">${
+                            (entry.authors.length < 3) ?
+                                ( entry.authors.slice(0,2).map(app.subScene.authorLabel.render).join(', ') ) :
+                                    ( entry.authors.slice(0,1).concat('etc').map(app.subScene.authorLabel.render).join(', ') )
+                        }</span>
+                    </div>
+                    <style>
                     .home--doc-entry-cover-img-v2 {
                         display: block;
                         width: 100%;
+                        margin: 0 0 10px;
                     }
-                }
-                </style>
-                <div class="home--doc-entry--content-container" style="padding: 10px 0 5px;">
-                    <div class="home--doc-entry-cover-img-v2-outer">
-                        <a href="${entry.articleUrl}">
-                            <img class="home--doc-entry-cover-img-v2" src="/cover/${entry.index}.jpg" style="">
-                        </a>
+                    @media screen and (min-width: 768px) {
+                        .home--doc-entry-cover-img-v2-outer {
+                            float: left;
+                            width: 200px;
+                            min-height: 120px;
+                            margin: 5px 15px 12px 0;
+                        }
+                        .home--doc-entry-cover-img-v2 {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                    </style>
+                    <div class="home--doc-entry--content-container" style="padding: 10px 0 5px;">
+                        <div class="home--doc-entry-cover-img-v2-outer">
+                            <a href="${entry.articleUrl}">
+                                <img class="home--doc-entry-cover-img-v2" src="/cover/${entry.index}.jpg" style="">
+                            </a>
+                        </div>
+                        <p class="home--doc-entry--content-paragraph ff-sansserif" id="js--home--doc-entry--content-container-${entry.index}" style="font-size: 16px; font-style: normal; padding: 0;">
+                            ${(function () {
+                                app.xhrget(`/db-${app.vars.renderLang}/` + entry.index + '.html', function (e) {
+                                    document.querySelector('#js--home--doc-entry--content-container-' + entry.index).innerHTML = (e.target.responseText).split('<p>')[1].split('</p>')[0].replace(/<a.+?>(.+?)<\/a>/g, '$1').trim();
+                                });
+                                return 'Loading...';
+                            })()}
+                        </p>
+                        <div style="clear: both;">
+                        </div>
                     </div>
-                    <p class="home--doc-entry--content-paragraph ff-sansserif" id="js--home--doc-entry--content-container-${entry.index}" style="font-size: 16px; font-style: normal; padding: 0;">
-                        ${(function () {
-                            app.xhrget(`/db-${app.vars.renderLang}/` + entry.index + '.html', function (e) {
-                                document.querySelector('#js--home--doc-entry--content-container-' + entry.index).innerHTML = (e.target.responseText).split('<p>')[1].split('</p>')[0].replace(/<a.+?>(.+?)<\/a>/g, '$1').trim();
-                            });
-                            return 'Loading...';
-                        })()}
-                    </p>
-                    <div style="clear: both;">
-                    </div>
+                    ${
+                        (function (entry) {
+                            if (entry.index === app.articles.length - 1) {
+                                document.querySelector('#og-image').setAttribute('content', '/cover/' + entry.index + '.jpg');
+                            };
+                            return '';
+                        })(entry)
+                    }
                 </div>
-                ${
-                    (function (entry) {
-                        if (entry.index === app.articles.length - 1) {
-                            document.querySelector('#og-image').setAttribute('content', '/cover/' + entry.index + '.jpg');
-                        };
-                        return '';
-                    })(entry)
-                }
             </div>
         `;
     },
@@ -389,6 +391,8 @@ app.scene.article_detail = {
                         <div class="detail--doc-entry-title">
                             <h2 class="ff-serif-alt" style="
                                 font-size: 30px;
+                                font-weight: 700;
+                                font-style: italic;
                                 color: #000;
                                 text-decoration: none !important;
                                 display: block;
@@ -396,8 +400,19 @@ app.scene.article_detail = {
                             ">${entry.title[app.vars.renderLang]}</h2>
                         </div>
                         <div class="detail--doc-entry-status">
-                            <span class="detail--doc-entry-status-date ff-monosapce">${(new Date(entry.dateSubmit)).toISOString().slice(0,10)}&nbsp;&nbsp;</span>
-                            ${entry.authors.map(app.subScene.authorLabel.render).join(', ')}
+                            <div style="float: left; padding: 0 16px 0 0;">
+                                <img src="/img/author-avatars/${entry.authors[0]}.png" style="
+                                    width: 50px;
+                                ">
+                            </div>
+                            <div style="float: left;">
+                                <div class="ff-sansserif-alt" style="font-weight: 600;">${app.subScene.authorLabel.render(entry.authors[0])}</div>
+                                <div class="detail--doc-entry-status-date" style="">
+                                    Published on ${(new Date(entry.dateSubmit)).toISOString().slice(0,10)}&nbsp;&nbsp;
+                                </div>
+                            </div>
+                            <div style="clear: both;">
+                            </div>
                         </div>
                         <div class="detail--doc-entry--content-container ff-serif" id="js--detail--doc-entry--content-container-${entry.index}" style="padding: 10px 0 0;">
                             ${(function () {
@@ -411,12 +426,7 @@ app.scene.article_detail = {
                         <div>
                             ${app.scene.article_detail.renderContributorsFootnote(articleIndex)}
                         </div>
-                        <div class="ff-sansserif hide-print">
-                            <nav class="h2" style="text-align: center; padding: 40px 0 20px;">${({en:'About the Author'+(entry.authors.length === 1 ? '' : 's'),zh:'关于作者'})[app.vars.renderLang]}</nav>
-                            ${entry.authors.map(function (authorId) {
-                                return app.scene.authors_profile.renderProfile(authorId, 'article_detail') + '<div style="height: 16px;"></div>'
-                            }).join('')}
-                        </div>
+
                         <div class="hide-print">
                             ${app.subScene.prevAndNext.render(articleIndex)}
                         </div>
@@ -497,7 +507,7 @@ app.scene.authors_profile = {
     },
     renderProfile: function (authorId, scene) {
         var authorObj = app.authors[authorId];
-        return `<div style="padding: 0 16px;">
+        return `<div class="subScene--authors_profile--profile">
             <div style="border: 1px solid #000; padding: 16px 15px; margin: 0 0 0px;">
                 <div style="padding: 0 0 0;">
                     <div class="cp--scene-authors_profile-avatar">
@@ -706,7 +716,7 @@ app.subScene.authorLabel = {
 
 app.subScene.authorInfoCard = {
     render: function (authorObj) {
-        return `<aside class="authorInfoCard">
+        return `<aside class="authorInfoCard ff-sansserif" style="font-weight: 400;">
             <div class="authorInfoCard-inner">
                 <div class="authorInfoCard-avatar" style="height: 100%; padding: 0 1px 0 0;">
                     <img src="/img/author-avatars/${authorObj.i}.png">

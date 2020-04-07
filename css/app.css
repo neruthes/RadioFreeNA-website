@@ -7,8 +7,6 @@
     Fonts
 ----------------------------------------------------- */
 
-/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&display=swap'); */
-
 /*  ----------------------------------------------------
     Base
 ----------------------------------------------------- */
@@ -159,14 +157,20 @@ header p {
     padding: 16px 0;
 }
 .home--doc-entry {
-    border-bottom: 1px solid #DDD;
     border-radius: 0px;
     margin-bottom: 16px;
+}
+.home--doc-entry-small,
+.home--doc-entry-big--inner {
+    border-bottom: 1px solid #DDD;
 }
 .home--doc-entry:last-child {
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 .home--doc-entry .home--doc-entry-title a {
+    font-family: 'Merriweather', 'Georgia', 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'PT Serif', 'Times New Roman', serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    font-weight: 700;
+    font-style: italic;
     text-decoration: none;
     padding: 0 0 10px;
 }
@@ -223,13 +227,16 @@ header p {
 }
 
 .detail--doc-entry .detail--doc-entry-title {
+    font-family: 'Merriweather', 'Georgia', 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'PT Serif', 'Times New Roman', serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    font-weight: 700;
+    font-style: italic;
     padding: 0 0 10px;
 }
 
 .detail--doc-entry-status {
     font-size: 18px;
-    line-height: 30px;
-    padding: 10px 0 10px;
+    line-height: 24px;
+    padding: 10px 0 14px;
 }
 
 .detail--doc-entry-status-tag {
@@ -239,10 +246,10 @@ header p {
 }
 
 .detail--doc-entry-status-date {
-    color: #000;
-    font-size: 18px;
-    line-height: 30px;
-    height: 30px;
+    color: #666;
+    font-size: 14px;
+    line-height: 24px;
+    height: 24px;
 }
 
 .detail--doc-entry--content-container h3 {
@@ -276,6 +283,11 @@ p {
 /* Authors */
 
 /* Author Profile */
+
+#cp--scene-authors .subScene--authors_profile--profile,
+#cp--scene-authors_profile .subScene--authors_profile--profile {
+    padding: 0 16px;
+}
 
 .cp--scene-authors_profile-avatar {
     padding: 0;
