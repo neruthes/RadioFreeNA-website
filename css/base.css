@@ -1,0 +1,49 @@
+/*
+    (c) 2019 Neruthes <https://neruthes.xyz>
+    Licensed under GNU AGPL v3
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&family=Merriweather:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: -apple-system, 'Seravek', 'Helvetica Neue', 'Helvetica', 'Source Sans Pro', 'Open Sans', 'Ubuntu', Arial, sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    padding: 0;
+    margin: 0;
+}
+
+.ff-sansserif {
+    font-family: '123', -apple-system, 'SF Pro Text', 'SF Pro UI', 'Helvetica Neue', 'Helvetica', 'Source Sans Pro', 'Open Sans', 'Ubuntu', 'Arial', sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+.ff-sansserif-alt {
+    font-family: 'Fira Sans Condensed', 'Source Sans Pro', -apple-system, 'Seravek', 'Helvetica Neue', 'Helvetica', 'Source Sans Pro', 'Open Sans', 'Ubuntu', 'Arial', sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+.ff-serif {
+    font-family: 'Georgia', 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'PT Serif', 'Times New Roman', serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+.ff-serif-alt {
+    font-family: 'Merriweather', 'Georgia', 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'PT Serif', 'Times New Roman', serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+.ff-serif-alt-2 {
+    font-family: 'PT Serif Caption', 'Georgia', 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'PT Serif', serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+.ff-monosapce, pre, code {
+    font-family: 'Source Code Pro', 'Menlo', 'PT Mono', monospace, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
+
+@media print {
+    .hide-print {
+        display: none;
+    }
+}

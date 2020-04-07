@@ -1,0 +1,28 @@
+{
+    "authors": [
+        {
+            "i": 0,
+            "name": {
+                "en": "Neruthes",
+                "zh": "Neruthes"
+            },
+            "url": "https://neruthes.xyz",
+            "bio": {
+                "en": "Cyberspace patriot. Independent writer.\n Main maintainer of Radio Free North America.",
+                "zh": "赛博空间爱国者。独立作者。\n自由北美电台主编。"
+            }
+        }
+    ],
+    "articles": [
+        {
+            "index": 0,
+            "dateSubmit": 1586231645016,
+            "authors": [0],
+            "contributors": [],
+            "title": {
+                "en": "Lorem Ipsum Dolor Sit Amet [Draft]",
+                "zh": "Lorem Ipsum Dolor Sit Amet [草稿]"
+            }
+        }
+    ]
+}

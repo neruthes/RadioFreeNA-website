@@ -1,0 +1,446 @@
+/*
+    (c) 2019 Neruthes <https://neruthes.xyz>
+    Licensed under GNU AGPL v3
+*/
+
+/*  ----------------------------------------------------
+    Fonts
+----------------------------------------------------- */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600&display=swap'); */
+
+/*  ----------------------------------------------------
+    Base
+----------------------------------------------------- */
+
+a {
+    color: #0066CB;
+}
+
+/*  ----------------------------------------------------
+    Global
+----------------------------------------------------- */
+
+html, body {
+    background: #FFF;
+    font-size: 16px;
+}
+
+/*  ----------------------------------------------------
+    Layout
+----------------------------------------------------- */
+
+
+.cp--section-inner {
+    max-width: 800px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+/*  ----------------------------------------------------
+    Header
+----------------------------------------------------- */
+
+header {
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+
+.cp--header-inner {
+
+}
+
+header h1 {
+    /* text-align: center; */
+    padding: 0 0px 10px;
+}
+
+header h1 a {
+    color: #000;
+    text-decoration: none;
+}
+
+header p {
+    padding: 0 0 10px;
+}
+
+/*  ----------------------------------------------------
+    Nav
+----------------------------------------------------- */
+
+.cp--nav-container {
+    background: #FFF;
+}
+.cp--nav-container .inner2 {
+    border-bottom: 3px solid #EEE;
+    padding: 0 0 10px;
+}
+
+.cp--nav-inner {
+    padding: 0 16px 0 0;
+}
+
+.cp--nav-container a {
+    font-family: 'Fira Sans Condensed', 'PT Sans', -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    /* color: #0571EF; */
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0px;
+    margin-right: 20px;
+    border-radius: 1px;
+}
+.cp--nav-container a[data-grandnav-current="true"] {
+    color: #0066CB;
+}
+.cp--nav-container a:hover {
+    color: #999;
+}
+
+/*  ----------------------------------------------------
+    Scenes
+----------------------------------------------------- */
+/* Shell */
+
+.cp--main {
+    position: relative;
+    min-height: 60vh;
+}
+
+/* General */
+
+.cp--scene .h2 {
+    padding: 0 16px 20px;
+}
+.cp--scene .h2,
+.cp--scene .h2 * {
+    font-family: 'Fira Sans Condensed', 'Source Sans Pro', -apple-system, 'Seravek', 'Helvetica Neue', 'Helvetica', 'Source Sans Pro', 'Open Sans', 'Ubuntu', 'Arial', sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* List & Detail */
+
+.cp--scene img {
+    border-radius: 3px;
+}
+
+.doc-entry-status-tag {
+    font-size: 14px;
+    color: #FFF;
+    line-height: 20px;
+    border-radius: 3px;
+    display: inline-block;
+    height: 20px;
+    padding: 0 6px;
+    margin: 0 6px 0 0;
+}
+.doc-entry-status--DONE { background: #222; }
+.doc-entry-status--OPEN { background: #0571EF; }
+.doc-entry-status--STOP { background: #C22; }
+
+.doc-entry-author-link {
+    color: #000;
+}
+.doc-entry-author-link:hover {
+    color: #0066CB;
+}
+
+/* List */
+
+.filter-option {
+    cursor: pointer;
+}
+
+.home--doc-entry {
+    padding: 16px 0;
+}
+.home--doc-entry {
+    border-bottom: 1px solid #DDD;
+    border-radius: 0px;
+    margin-bottom: 16px;
+}
+.home--doc-entry:last-child {
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+.home--doc-entry .home--doc-entry-title a {
+    text-decoration: none;
+    padding: 0 0 10px;
+}
+.home--doc-entry .home--doc-entry-title--text {
+    font-weight: 600;
+    line-height: 1.2em;
+    display: block;
+    padding: 5px 0 0;
+}
+.home--doc-entry .home--doc-entry-title a:hover {
+    color: #0066CB !important;
+}
+.home--doc-entry .home--doc-entry-title a:link:hover .home--doc-entry-title--text {
+    color: #0066CB !important;
+}
+.home--doc-entry .home--doc-entry-title a:visited .home--doc-entry-title--text {
+    color: #000;
+}
+.home--doc-entry .home--doc-entry-title a:visited:hover .home--doc-entry-title--text {
+    color: #0066CB !important;
+}
+
+.home--doc-entry-status {
+    font-size: 14px;
+    line-height: 20px
+}
+
+.home--doc-entry-status-date {
+    color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+}
+
+.home--doc-entry-status-authors {
+    color: #000;
+}
+@media screen and (min-width: 768px) {
+    .home--doc-entry-cover {
+        float: right;width: 40%;
+        padding: 0 0 0 15px;
+    }
+    .home--doc-entry-title--text {
+        font-size: 36px;
+        display:block;
+        padding-top: 0px;
+    }
+}
+
+/* Detail */
+
+.detail--doc-entry {
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.detail--doc-entry .detail--doc-entry-title {
+    padding: 0 0 10px;
+}
+
+.detail--doc-entry-status {
+    font-size: 18px;
+    line-height: 30px;
+    padding: 10px 0 10px;
+}
+
+.detail--doc-entry-status-tag {
+    font-size: 18px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.detail--doc-entry-status-date {
+    color: #000;
+    font-size: 18px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.detail--doc-entry--content-container h3 {
+    font-family: 'SF Pro Display', 'SF Pro Text', 'SF UI Display', 'SF UI Text', -apple-system, 'Source Sans Pro', 'Seravek', 'Helvetica Neue', 'Helvetica', 'Open Sans', 'Ubuntu', Arial, sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.detail--doc-entry--content-container p {
+    font-family: 'Charter', 'Georgia', 'Times New Roman', 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+    font-size: 20px;
+}
+
+/* About */
+
+.cp--scene section {
+    padding: 5px 0;
+}
+
+.cp--scene h3,
+.cp--scene h4,
+.cp--scene h5 {
+    padding: 0.5em 0;
+}
+
+p {
+    line-height: 1.45em;
+    padding: 0 0 0.7em;
+}
+
+/* Authors */
+
+/* Author Profile */
+
+.cp--scene-authors_profile-avatar {
+    padding: 0;
+}
+.cp--scene-authors_profile-avatar img {
+    display: block;
+    width: 120px;
+    border-radius: 10000px;
+}
+@media screen and (min-width: 768px) {
+    .cp--scene-authors_profile-avatar {
+        float: left;
+    }
+    .cp--scene-authors_profile-info {
+        margin-left: 136px;
+    }
+}
+.cp--scene-authors_profile-info h2 a {
+    color: inherit;
+}
+.cp--scene-authors_profile-info h2 a:hover {
+    color: #0066CB;
+}
+.cp--scene-authors_profile-info p {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 0 4px;
+}
+.cp--scene-authors_profile-info p a.authors_profile-urlanchor {
+    font-family: 'Source Code Pro', 'Inconsolata', 'Menlo', monospace;
+    color: #000;
+    letter-spacing: 0px;
+}
+
+/*  ----------------------------------------------------
+    Author Info Card
+----------------------------------------------------- */
+
+.authorInfoCard {
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    .authorInfoCard-container {
+        position: relative;
+    }
+    .authorInfoCard-container:hover .authorInfoCard {
+        display: block;
+    }
+    .authorInfoCard {
+        position: absolute;
+        top: -40px;
+        left: calc(100% - 3px);
+        width: 420px;
+        height: auto;
+        padding: 0 0 0 20px;;
+    }
+    .authorInfoCard-inner {
+        background: #FFF;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 10px 30px 5px, rgba(0, 0, 0, 0.02) 0 1px 5px 1px;
+        border-radius: 4px;
+        padding: 20px;
+    }
+    .authorInfoCard-avatar {
+        float: left;
+    }
+    .authorInfoCard-avatar img {
+        border-radius: 10000px;
+        width: 70px;
+    }
+    .authorInfoCard-info {
+        margin: 0 0 0 85px;
+    }
+}
+
+
+/*  ----------------------------------------------------
+    Footer
+----------------------------------------------------- */
+
+.cp--footer {
+    font-size: 14px;
+    /* font-weight: 400; */
+    color: #666;
+    background: #FFF;
+    /* padding-top: 50px; */
+    /* padding-bottom: 80px; */
+}
+
+.cp--footer .inner2 {
+    border-top: 3px solid #EEE;
+    padding: 50px 0px 80px;
+}
+
+.cp--footer-links {
+    font-size: 16px;
+    font-weight: 400;
+}
+.cp--footer-links a {
+    margin-right: 10px;
+}
+.cp--footer-links a:hover {
+    color: #0066CB;
+}
+.cp--footer a {
+    color: #000;
+}
+.cp--footer p {
+    line-height: 18px;
+    padding: 0 !important;
+    margin: 0 0 4px;
+}
+
+/*  ----------------------------------------------------
+    Misc Components
+----------------------------------------------------- */
+
+.uuid-346c9534:not(:last-child) {
+    margin-bottom: 20px;
+}
+/* Slice */
+.uuid-346c9535:hover {
+    background: #FAFAFA;
+}
+/* Slice */
+.uuid-346c9566 {
+    max-width: 736px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+}
+@media screen and (min-width: 99768px) {
+    .uuid-346c9566 {
+        font-size: 0px;
+        float: left;
+        width: calc(50% - 7px);
+    }
+    .uuid-346c9566:nth-child(odd) {
+        margin-right: 7px;
+    }
+    .uuid-346c9566:nth-child(even) {
+        margin-left: 7px;
+    }
+    .uuid-346c9566 a {
+        color: red;
+    }
+}
+
+/*  ----------------------------------------------------
+    Routing
+----------------------------------------------------- */
+
+.cp--scene {
+    display: none;
+}
+
+body[data-scene="home"] #cp--scene-home { display: block !important; }
+body[data-scene="about"] #cp--scene-about { display: block !important; }
+body[data-scene="article_detail"] #cp--scene-article_detail { display: block !important; }
+body[data-scene="authors"] #cp--scene-authors { display: block !important; }
+body[data-scene="authors_profile"] #cp--scene-authors_profile { display: block !important; }
+
+/*  ----------------------------------------------------
+    Misc
+----------------------------------------------------- */
+
+body[data-render-lang="zh"] .detail--doc-entry--content-container p {
+    font-family: -apple-system, 'SF Pro Text', 'SF Pro UI', 'Helvetica Neue', 'Helvetica', 'Source Sans Pro', 'Open Sans', 'Ubuntu', 'Arial', sans-serif, 'PingFang SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei';
+}
