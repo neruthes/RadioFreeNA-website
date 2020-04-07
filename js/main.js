@@ -208,6 +208,8 @@ app.scene.home = {
         return `
             <div class="home--doc-entry home--doc-entry-big" data-entry-big-entry-index="${entry.index}" style="
                 padding-top: 8px;
+                padding-left: 16px;
+                padding-right: 16px;
                 opacity: 0;
                 transition: opacity 150ms ease;
             ">
@@ -474,7 +476,7 @@ app.scene.authors = {
             <div>
                 <nav class="h2"><a href="/?lang=${app.vars.renderLang}">${({en:'Home',zh:'首页'})[app.vars.renderLang]}</a> / ${({en:'Authors',zh:'作者'})[app.vars.renderLang]}</nav>
             </div>
-            <div>
+            <div style="padding: 0 0px;">
                 ${html}
             </div>
         </div>`;
@@ -495,7 +497,7 @@ app.scene.authors_profile = {
     },
     renderProfile: function (authorId, scene) {
         var authorObj = app.authors[authorId];
-        return `<div>
+        return `<div style="padding: 0 16px;">
             <div style="border: 1px solid #000; padding: 16px 15px; margin: 0 0 0px;">
                 <div style="padding: 0 0 0;">
                     <div class="cp--scene-authors_profile-avatar">
